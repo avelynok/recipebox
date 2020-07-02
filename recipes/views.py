@@ -56,7 +56,8 @@ def add_recipe(request):
                 time = data['time'],
                 instruction = data['instruction'],
             )
-            return HttpResponseRedirect(reverse('homepage'))
+            
+            return HttpResponseRedirect(reverse('next'))
     form = AddRecipeForm()
     return render(request, 'AddRecipeForm.html', {'form': form})
     
@@ -90,5 +91,4 @@ def loginview(request):
 
 def logoutview(request):
     logout(request)
-    messages.info(request, 'Logged out successfully!')
     return HttpResponseRedirect(reverse('homepage')) 

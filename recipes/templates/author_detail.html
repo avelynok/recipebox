@@ -2,8 +2,15 @@
 
 {% block content %}
 <div class="post">
-    <h4>{{ recipe.author.name }}</h4>
-    <p>{{ recipe.author.bio }}</p>
-    <p><a href="{% url 'recipe_detail' pk=recipe.pk %}">Recepies</a></p>
-</h4>
+    <h4>{{author.name}}</h4>
+    <h4>Bio:</h4><p>{{author.bio}}</p>
+    <h4>Other Recipes by {{author.name}}</h4>
+    {% for recipe in data %}
+        {% if recipe.author == author %}
+            <h4>
+                <li><a href="{% url 'recipe_detail' recipe.id%}">{{recipe.title}}</a></li>
+            </h4>
+        {% endif %}
+    {% endfor %}
+</div>
 {% endblock %}

@@ -3,9 +3,9 @@
 {% block content %}
 <div class="post">
     <h4>{{ recipe.title }} | by 
-    <a href="{% url 'author_detail' pk=recipe.pk %}">{{ recipe.author.name }}</a>}</h4>
+    <a href="{% url 'author_detail' recipe.author.id %}">{{ recipe.author }}</a></h4>
     <p>{{ recipe.description }}</p>
-    <p><strong>Cook Time:</strong> {{ recipe.time }}</p>
-    <p><strong>Instruction:</strong> {{ recipe.instruction }}</p>
+    <h4>Cook Time:</h4> <p>{{ recipe.time }}</p>
+    <h4><strong>Instruction:</strong></h4> <p>{{ recipe.instruction }}</p>
 </div>
 {% endblock %}

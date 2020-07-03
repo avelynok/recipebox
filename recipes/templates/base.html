@@ -11,7 +11,16 @@
     <div class="page-header">
         <h1><a href="/">Best Recipes In The World!</a></h1>
     </div>
+    <div class="center">
+        <button class="button"><a href="{% url 'add_recipe'%}">ADD A RECIPE</a></button>
+        <button class="button"><a href="{% url 'add_author'%}">ADD A MEMBER</a></button>
+        <button class="button"><a href="{% url 'loginview'%}">LOGIN</a></button>
+    </div>
             {% block content %}
+            
             {% endblock %}
+    <div class="center">
+        <button class="button"><a href="{% url 'logoutview'%}">LOGOUT</a></button>
+    </div>
     </body>
 </html>

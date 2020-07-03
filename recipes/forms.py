@@ -2,7 +2,6 @@ from django import forms
 from recipes.models import Author
 
 # Create your models here.
-
 class AddAuthorForm(forms.ModelForm):
     class Meta:
         model = Author
@@ -10,8 +9,7 @@ class AddAuthorForm(forms.ModelForm):
             'name',
             'bio',
         ]
-    
-
+        
 class AddRecipeForm(forms.Form):
     title = forms.CharField(max_length=50)
     author = forms.ModelChoiceField(queryset= Author.objects.all())
@@ -26,3 +24,4 @@ class SignupForm(forms.Form):
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50)
     password = forms.CharField(widget=forms.PasswordInput)
+    
